@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Yard Sale — sell your stuff, keep 100%</title>
+<title>yrdsl.app · sell your stuff, keep 100%</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -140,10 +140,19 @@ html[data-dark="true"] .mode-toggle::after { left: 16px; }
 }
 
 .eyebrow {
-  display: inline-flex; align-items: center;
-  font-size: 13px;
-  color: var(--muted);
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 12px; font-weight: 600;
+  letter-spacing: 0.04em; text-transform: uppercase;
+  color: var(--warn);
+  background: color-mix(in oklab, var(--warn) 14%, transparent);
+  padding: 5px 10px;
+  border-radius: 999px;
   margin-bottom: 22px;
+}
+.eyebrow::before {
+  content: "";
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--warn);
 }
 
 h1 {
@@ -792,28 +801,17 @@ section { padding: 80px 0; border-top: 1px solid var(--line); }
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
-  padding: 40px;
-  display: grid; grid-template-columns: 1fr auto;
-  gap: 32px;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
+  padding: 32px 36px;
+  max-width: 880px; margin: 0 auto;
+  display: flex; flex-wrap: wrap;
+  gap: 24px 40px;
+  align-items: center; justify-content: space-between;
 }
 @media (max-width: 720px) {
-  .oss { grid-template-columns: 1fr; padding: 28px; }
+  .oss { padding: 24px; }
 }
-.oss-code {
-  position: absolute; right: -20px; top: 50%; transform: translateY(-50%);
-  font-family: "JetBrains Mono", monospace; font-size: 120px;
-  color: var(--surface-2); opacity: 0.7;
-  pointer-events: none;
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  z-index: 0;
-}
-.oss > * { position: relative; z-index: 1; }
-.oss h3 { margin: 0 0 8px; font-size: 24px; font-weight: 600; letter-spacing: -0.015em; }
-.oss p { margin: 0; color: var(--ink-2); font-size: 15px; max-width: 520px; line-height: 1.55; }
+.oss h3 { margin: 0 0 6px; font-size: 22px; font-weight: 600; letter-spacing: -0.015em; }
+.oss p { margin: 0; color: var(--ink-2); font-size: 15px; max-width: 560px; line-height: 1.5; }
 .oss-cta {
   display: inline-flex; align-items: center; gap: 10px;
   padding: 12px 18px;
@@ -898,16 +896,16 @@ footer .legal { grid-column: 1 / -1; padding-top: 24px; border-top: 1px solid va
 <section class="hero" style="border-top: none; padding-top: 72px;">
   <div class="wrap hero-grid">
     <div class="hero-left">
-      <span class="eyebrow">Open beta</span>
-      <h1 id="headline">Your yard sale. <em>Online.</em><br/>In five minutes.</h1>
+      <span class="eyebrow">Invite-only beta</span>
+      <h1 id="headline">Sell your stuff. <em>Online.</em><br/>In five minutes.</h1>
       <p class="hero-sub" id="subheadline">
-        Add your stuff from your browser, or just snap a photo and tell Claude. Share one link with your neighbors. They text, email, or WhatsApp you directly — no platform middleman, no fees, no cut.
+        Add your stuff from your browser, or just snap a photo and tell Claude. Share one link with your neighbors. They text, email, or WhatsApp you directly. No platform middleman, no fees, no cut.
       </p>
       <div class="cta-row">
-        <a class="btn-download" href="/signup">
+        <a class="btn-download" href="mailto:mreider@gmail.com?subject=yrdsl.app%20invite%20request&body=Hi%2C%20I%27d%20like%20to%20try%20yrdsl.app%20during%20the%20beta.%20Thanks!">
           <span class="cta-main">
-            <span>Start free</span>
-            <span class="cta-sub">No card required · open beta</span>
+            <span>Request an invite</span>
+            <span class="cta-sub">Free during beta · no card</span>
           </span>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         </a>
@@ -1105,7 +1103,7 @@ footer .legal { grid-column: 1 / -1; padding-top: 24px; border-top: 1px solid va
           <div class="claude-chrome">
             <div class="star">✦</div>
             <div class="claude-name">Claude</div>
-            <div class="claude-conn">Yard Sale</div>
+            <div class="claude-conn">yrdsl.app</div>
           </div>
           <div class="chat" id="chat">
             <!-- Populated by JS with staggered reveal -->
@@ -1134,7 +1132,7 @@ footer .legal { grid-column: 1 / -1; padding-top: 24px; border-top: 1px solid va
     <div class="features">
       <div class="feat">
         <h3 class="feat-h">No commission</h3>
-        <p class="feat-p">eBay takes 13%. Mercari takes 13%. Facebook takes 5%. Yard Sale takes nothing. Your buyer pays $100, you get $100.</p>
+        <p class="feat-p">eBay takes 13%. Mercari takes 13%. Facebook takes 5%. yrdsl.app takes nothing. Your buyer pays $100, you get $100.</p>
       </div>
       <div class="feat">
         <h3 class="feat-h">Claude does the writing</h3>
@@ -1142,15 +1140,15 @@ footer .legal { grid-column: 1 / -1; padding-top: 24px; border-top: 1px solid va
       </div>
       <div class="feat">
         <h3 class="feat-h">Buyers contact you directly</h3>
-        <p class="feat-p">Put your email, SMS, or WhatsApp on the page — any combo. Your neighbors reach out on their own. No platform messages, no "are you still interested?", no inbox to manage.</p>
+        <p class="feat-p">Put your email, SMS, or WhatsApp on the page. Any combination works. Your neighbors reach out on their own. No platform messages, no "are you still interested?", no inbox to manage.</p>
       </div>
       <div class="feat">
         <h3 class="feat-h">Pennies a month</h3>
-        <p class="feat-p">A normal sale costs about 10 cents a month to host. When you're done, delete it and the cost drops to zero — and sales under 50 cents a month we skip billing entirely.</p>
+        <p class="feat-p">A normal sale costs about 10 cents a month to host. When you're done, delete it and the cost drops to zero. Sales under 50 cents a month, we skip billing entirely.</p>
       </div>
       <div class="feat">
         <h3 class="feat-h">Looks good</h3>
-        <p class="feat-p">Four themes — clean, magazine, bold, retro — so your sale looks like you, not like a flea-market spreadsheet.</p>
+        <p class="feat-p">Four themes: conservative, retro, hip, and artsy. Your sale looks like you, not like a flea-market spreadsheet.</p>
       </div>
       <div class="feat">
         <h3 class="feat-h">Free & open source</h3>
@@ -1174,7 +1172,7 @@ footer .legal { grid-column: 1 / -1; padding-top: 24px; border-top: 1px solid va
       <div class="price-card hero-price">
         <div class="price-head">A typical sale</div>
         <div class="price-big">~$0.10<span style="font-size: 20px; opacity: 0.6; margin-left: 8px; font-weight: 400;">/ month</span></div>
-        <p class="price-note">12 items, a few hundred visitors, open for a couple of weekends. Most one-off users never cross our $0.50 billing threshold — they run a sale for free.</p>
+        <p class="price-note">12 items, a few hundred visitors, open for a couple of weekends. Most one-off users never cross our $0.50 billing threshold, so they run a sale for free.</p>
       </div>
 
       <div class="price-card">
@@ -1183,7 +1181,7 @@ footer .legal { grid-column: 1 / -1; padding-top: 24px; border-top: 1px solid va
           <div class="rr"><span>eBay</span><b>13% per sale</b></div>
           <div class="rr"><span>Mercari</span><b>13% per sale</b></div>
           <div class="rr"><span>Facebook Marketplace</span><b>5% if shipped</b></div>
-          <div class="rr"><span style="font-weight: 600; color: var(--ink);">Yard Sale</span><b style="color: var(--ink);">$0</b></div>
+          <div class="rr"><span style="font-weight: 600; color: var(--ink);">yrdsl.app</span><b style="color: var(--ink);">$0</b></div>
         </div>
         <p class="price-note" style="margin-top: 18px; font-size: 13px;">Sell a $500 couch on eBay, they keep $67. Sell it here, you keep all $500.</p>
       </div>
@@ -1198,14 +1196,14 @@ footer .legal { grid-column: 1 / -1; padding-top: 24px; border-top: 1px solid va
   <div class="wrap">
     <div class="section-head">
       <h2>Pick a look.</h2>
-      <p>Four themes — clean, magazine, bold, retro. Click one to preview.</p>
+      <p>Four themes: conservative, retro, hip, and artsy. Click one to preview.</p>
     </div>
 
     <div class="themes-switcher" id="themes-switcher">
-      <button data-theme="conservative" class="active">Clean</button>
-      <button data-theme="artsy">Magazine</button>
-      <button data-theme="hip">Bold</button>
+      <button data-theme="conservative" class="active">Conservative</button>
       <button data-theme="retro">Retro</button>
+      <button data-theme="hip">Hip</button>
+      <button data-theme="artsy">Artsy</button>
     </div>
 
     <div class="theme-preview">
@@ -1272,10 +1270,9 @@ footer .legal { grid-column: 1 / -1; padding-top: 24px; border-top: 1px solid va
 <section>
   <div class="wrap">
     <div class="oss">
-      <div class="oss-code">{ }</div>
       <div>
         <h3>Free and open source.</h3>
-        <p>The whole thing is on GitHub. Read the code, run your own copy, or chip in a translation. Apache 2.0 — you can use it however you want.</p>
+        <p>The whole thing is on GitHub. Read the code, run your own copy, or chip in a translation. Apache 2.0 licensed, listed on <a href="https://oss.kuvop.com" style="text-decoration: underline;">oss.kuvop.com</a>, built by Kuvop LLC.</p>
       </div>
       <a class="oss-cta" href="https://github.com/mreider/yard-sale" target="_blank">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2 .37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
@@ -1328,7 +1325,7 @@ footer .legal { grid-column: 1 / -1; padding-top: 24px; border-top: 1px solid va
       </ul>
     </div>
     <div class="legal">
-      <span>© 2026 Yard Sale · Apache 2.0</span>
+      <span>© 2026 Kuvop LLC · Apache 2.0 · <a href="https://oss.kuvop.com" style="text-decoration: underline;">oss.kuvop.com</a></span>
       <span>Made with too many spare weekends.</span>
     </div>
   </footer>
@@ -1479,8 +1476,8 @@ modeBtn.addEventListener("click", () => applyDark(document.documentElement.getAt
 
 /* ---------------- Tweaks ---------------- */
 const HEADLINES = {
-  phone: { h: 'Your yard sale. <em>Online.</em><br/>In five minutes.', s: "Add your stuff from your browser, or just snap a photo and tell Claude. Share one link with your neighbors. They text, email, or WhatsApp you directly — no platform middleman, no fees, no cut." },
-  hundred: { h: 'Sell your stuff. <em>Keep every dollar.</em>', s: "eBay takes 13%. Mercari takes 13%. We take 0%. Sell a $500 couch and you keep $500 — not $433." },
+  phone: { h: 'Sell your stuff. <em>Online.</em><br/>In five minutes.', s: "Add your stuff from your browser, or just snap a photo and tell Claude. Share one link with your neighbors. They text, email, or WhatsApp you directly. No platform middleman, no fees, no cut." },
+  hundred: { h: 'Sell your stuff. <em>Keep every dollar.</em>', s: "eBay takes 13%. Mercari takes 13%. We take 0%. Sell a $500 couch and you keep $500, not $433." },
   metered: { h: 'Your own little shop. <em>For pennies a month.</em>', s: "A normal yard sale costs about fifteen cents a month to host. When the couch is gone, delete it and your bill drops to zero." },
   local: { h: 'Own your sale, <em>not the platform.</em>', s: "No ads, no algorithm, no one telling you to boost your post. Just your stuff at one clean link you can share anywhere." }
 };
