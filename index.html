@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>yrdsl.app · sell your stuff, keep 100%</title>
+<title>yrdsl.app · your yard sale, online</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -418,13 +418,13 @@ section { padding: 80px 0; border-top: 1px solid var(--line); }
 
 /* iPhone mock */
 .phone-frame {
-  width: 320px;
+  width: 260px;
   max-width: 100%;
   margin: 0 auto;
   aspect-ratio: 9/18.5;
   background: #1a1a1c;
-  border-radius: 44px;
-  padding: 14px;
+  border-radius: 38px;
+  padding: 12px;
   position: relative;
   box-shadow: var(--shadow-lg), inset 0 0 0 1px rgba(255,255,255,0.05);
 }
@@ -897,9 +897,9 @@ footer .legal { grid-column: 1 / -1; padding-top: 24px; border-top: 1px solid va
   <div class="wrap hero-grid">
     <div class="hero-left">
       <span class="eyebrow">Invite-only beta</span>
-      <h1 id="headline">Sell your stuff. <em>Online.</em><br/>In five minutes.</h1>
+      <h1 id="headline">Like a yard sale. <em>On the internet.</em></h1>
       <p class="hero-sub" id="subheadline">
-        Add your stuff from your browser, or just snap a photo and tell Claude. Share one link with your neighbors. They text, email, or WhatsApp you directly. No platform middleman, no fees, no cut.
+        Not a marketplace like eBay or Facebook. We don't send you buyers. Your neighbors, coworkers, and group chats do. We just give you the page to point them at.
       </p>
       <div class="cta-row">
         <a class="btn-download" href="https://app.yrdsl.app/signup">
@@ -1069,20 +1069,27 @@ footer .legal { grid-column: 1 / -1; padding-top: 24px; border-top: 1px solid va
   <div class="wrap">
     <div class="section-head">
       <h2>How it works.</h2>
-      <p>Add your stuff once. Share one link. Get messages when someone wants something. That's the whole thing.</p>
+      <p>Build a page. Share the link. Take messages. That's the whole thing.</p>
     </div>
 
     <div class="how">
       <div class="steps" id="steps">
-        <div class="step active" data-step="0">
+        <div class="step" data-step="0">
           <div class="step-n">1</div>
           <div>
-            <div class="step-h">Add stuff by chatting with Claude</div>
+            <div class="step-h">Put your stuff on a page</div>
             <p class="step-p">Snap a picture, tell Claude what it is and roughly what you want for it. Claude writes the title, description, and tags, and adds it to your sale. You just say yes.</p>
           </div>
         </div>
-        <div class="step" data-step="1">
+        <div class="step active" data-step="1">
           <div class="step-n">2</div>
+          <div>
+            <div class="step-h">Share the link</div>
+            <p class="step-p">One URL for your whole sale. Paste it in your group chat, neighborhood FB, WhatsApp, text your block — wherever you already reach people. You pick who sees it.</p>
+          </div>
+        </div>
+        <div class="step" data-step="2">
+          <div class="step-n">3</div>
           <div>
             <div class="step-h">Mark things reserved, hand stuff off</div>
             <p class="step-p">When a buyer taps Reserve on your page, you get an email. Or tell Claude. "mark the couch reserved for my neighbor". and it's done. You pick the time and take cash or Venmo.</p>
@@ -1131,6 +1138,10 @@ footer .legal { grid-column: 1 / -1; padding-top: 24px; border-top: 1px solid va
 
     <div class="features">
       <div class="feat">
+        <h3 class="feat-h">Bring your own buyers</h3>
+        <p class="feat-p">We don't run an algorithm. We don't send you traffic. In exchange, we don't take a cut, and your sale doesn't get buried under a million other listings. The people who already want your stuff are one link away.</p>
+      </div>
+      <div class="feat">
         <h3 class="feat-h">No commission</h3>
         <p class="feat-p">eBay takes 13%. Mercari takes 13%. Facebook takes 5%. yrdsl.app takes nothing. Your buyer pays $100, you get $100.</p>
       </div>
@@ -1140,15 +1151,11 @@ footer .legal { grid-column: 1 / -1; padding-top: 24px; border-top: 1px solid va
       </div>
       <div class="feat">
         <h3 class="feat-h">Buyers contact you directly</h3>
-        <p class="feat-p">Put your email, SMS, or WhatsApp on the page. Any combination works. Your neighbors reach out on their own. No platform messages, no "are you still interested?", no inbox to manage.</p>
+        <p class="feat-p">You share the link. The people who care reach out straight to you: email, SMS, WhatsApp, whatever you put on the page. No platform inbox, no "is this still available?", no threads to manage.</p>
       </div>
       <div class="feat">
         <h3 class="feat-h">Pennies a month</h3>
         <p class="feat-p">A normal sale costs about 10 cents a month to host. When you're done, delete it and the cost drops to zero. Sales under 50 cents a month, we skip billing entirely.</p>
-      </div>
-      <div class="feat">
-        <h3 class="feat-h">Looks good</h3>
-        <p class="feat-p">Four themes: conservative, retro, hip, and artsy. Your sale looks like you, not like a flea-market spreadsheet.</p>
       </div>
       <div class="feat">
         <h3 class="feat-h">Free & open source</h3>
@@ -1339,7 +1346,7 @@ footer .legal { grid-column: 1 / -1; padding-top: 24px; border-top: 1px solid va
   <div class="trow">
     <span>Headline</span>
     <select id="tw-headline">
-      <option value="phone">Online in five minutes</option>
+      <option value="phone">Yard sale, online</option>
       <option value="hundred">Keep every dollar</option>
       <option value="metered">Pennies a month</option>
       <option value="local">Own your sale</option>
@@ -1403,6 +1410,11 @@ const chatScripts = {
     { t: "user", html: "perfect" },
   ],
   1: [
+    { t: "user", html: "give me a quick blurb for my group chat" },
+    { t: "ai", html: "Try this:<div class='listing-preview'><div class='lp-title'>Cleaning out the garage this weekend.</div><div class='lp-tags'>First crack for anyone on this chat:</div><div class='lp-title' style='font-family:monospace;font-size:12px;margin-top:6px;'>yrdsl.app/matt/spring-purge</div></div>" },
+    { t: "user", html: "copied 👍" },
+  ],
+  2: [
     { t: "user", html: "my neighbor's gonna buy the couch tomorrow, mark it reserved" },
     { t: "ai", html: "Done. the couch is now marked <b>Reserved</b>. It'll still show on your sale page but nobody else can claim it." },
     { t: "user", html: "thx" },
@@ -1440,7 +1452,7 @@ function activateStep(idx) {
 steps.forEach((s, i) => {
   s.addEventListener("click", () => activateStep(i));
 });
-activateStep(1); // open on step 2 since that's the hero demo
+activateStep(1); // open on step 2 (share the link) — the new hero demo
 
 // Auto-cycle steps
 let stepIdx = 1;
@@ -1448,7 +1460,7 @@ let stepTimer;
 function startStepCycle() {
   stopStepCycle();
   stepTimer = setInterval(() => {
-    stepIdx = (stepIdx + 1) % 2;
+    stepIdx = (stepIdx + 1) % 3;
     activateStep(stepIdx);
   }, 6500);
 }
@@ -1476,7 +1488,7 @@ modeBtn.addEventListener("click", () => applyDark(document.documentElement.getAt
 
 /* ---------------- Tweaks ---------------- */
 const HEADLINES = {
-  phone: { h: 'Sell your stuff. <em>Online.</em><br/>In five minutes.', s: "Add your stuff from your browser, or just snap a photo and tell Claude. Share one link with your neighbors. They text, email, or WhatsApp you directly. No platform middleman, no fees, no cut." },
+  phone: { h: 'Like a yard sale. <em>On the internet.</em>', s: "Not a marketplace like eBay or Facebook. We don't send you buyers. Your neighbors, coworkers, and group chats do. We just give you the page to point them at." },
   hundred: { h: 'Sell your stuff. <em>Keep every dollar.</em>', s: "eBay takes 13%. Mercari takes 13%. We take 0%. Sell a $500 couch and you keep $500, not $433." },
   metered: { h: 'Your own little shop. <em>For pennies a month.</em>', s: "A normal yard sale costs about fifteen cents a month to host. When the couch is gone, delete it and your bill drops to zero." },
   local: { h: 'Own your sale, <em>not the platform.</em>', s: "No ads, no algorithm, no one telling you to boost your post. Just your stuff at one clean link you can share anywhere." }
