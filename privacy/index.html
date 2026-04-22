@@ -39,8 +39,8 @@
 
   <h2>What we collect</h2>
   <ul>
-    <li><b>Account:</b> email, display name, username, password (stored as a scrypt hash, so we never see the plaintext), optional avatar.</li>
-    <li><b>Sale content:</b> titles, descriptions, prices, photos, tags, and the contact methods you choose to publish (email / SMS / WhatsApp). All stored on Cloudflare D1 + R2 in the EU.</li>
+    <li><b>Account:</b> email, username, password (stored as a one-way hash, so we never see the plaintext), optional avatar.</li>
+    <li><b>Sale content:</b> titles, descriptions, prices, photos, tags, and the contact methods you choose to publish (email / SMS / WhatsApp).</li>
     <li><b>Meter events:</b> counters for storage-GB-days, published page views, API requests. Used to compute your bill.</li>
     <li><b>Request logs:</b> method, path, status, duration, IP, and user agent for each HTTP request. Kept for 30 days for debugging / abuse investigation, then purged.</li>
   </ul>
@@ -54,7 +54,7 @@
 
   <h2>Who we share it with</h2>
   <ul>
-    <li><b>Cloudflare</b> hosts our database, storage, and workers (data lives in the EU).</li>
+    <li><b>Cloudflare</b> hosts our database, storage, and workers.</li>
     <li><b>Resend</b> sends auth emails (signup confirmation and password resets). Your email is shared with them at the moment of send.</li>
     <li><b>Stripe</b> (once billing is live) for payment processing. They see your card details, we don't.</li>
     <li>Nobody else. We do not sell data.</li>
