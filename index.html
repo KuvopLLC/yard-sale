@@ -72,6 +72,16 @@ code { font-family: "JetBrains Mono", monospace; font-size: 0.92em; background: 
 .nav-right { display: flex; align-items: center; gap: 16px; font-size: 14px; color: var(--muted); }
 .nav-right a { transition: color .12s; }
 .nav-right a:hover { color: var(--ink); }
+.nav-cta {
+  padding: 6px 12px;
+  background: var(--ink);
+  color: var(--bg) !important;
+  border-radius: 999px;
+  font-weight: 500;
+  font-size: 13px;
+  transition: opacity .12s, transform .08s;
+}
+.nav-cta:hover { opacity: 0.88; transform: translateY(-1px); }
 
 .mode { display: inline-flex; align-items: center; gap: 8px; }
 .mode svg { color: var(--muted); transition: color .15s; }
@@ -263,6 +273,7 @@ footer .links { display: flex; gap: 18px; flex-wrap: wrap; }
     </a>
     <div class="nav-right">
       <a href="https://app.yrdsl.app/login">Sign in</a>
+      <a class="nav-cta" href="https://app.yrdsl.app/signup">Sign up</a>
       <span class="mode">
         <svg class="sun" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
         <button class="mode-toggle" id="mode" aria-label="Toggle dark mode"></button>
