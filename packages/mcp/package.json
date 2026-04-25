@@ -1,6 +1,6 @@
 {
   "name": "@yrdsl/mcp",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "MCP server for yrdsl.app. Talks to either the hosted API (api.yrdsl.app) or a local self-hosted repo. Lets Claude add, edit, and reserve items on a digital yard sale.",
   "type": "module",
   "main": "./dist/index.js",
