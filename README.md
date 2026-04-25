@@ -71,10 +71,16 @@ Source: [`packages/mcp`](./packages/mcp).
   (`conservative`, `artsy`, `hip`, `retro`) as plain CSS.
 - [`@yrdsl/mcp`](./packages/mcp) — the MCP server (stdio CLI + library).
 
-## Contact
+## Help and feedback
 
-[matt@mreider.com](mailto:matt@mreider.com). Bug reports, feature
-requests, and "I tried X and it was weird" are all welcome.
+- **Bugs in this code, or feature requests for the OSS bits** (core, viewer,
+  themes, MCP, self-hosted template, landing): open a [GitHub issue](https://github.com/KuvopLLC/yrdsl/issues).
+- **Anything about the hosted product at [yrdsl.app](https://yrdsl.app)** — questions,
+  problems, ideas, "I tried X and it was weird": post in
+  [r/yrdsl](https://www.reddit.com/r/yrdsl/). That's where we listen for
+  hosted-product feedback. Public on purpose so other users can chime in.
+- For private or security-sensitive things: [matt@mreider.com](mailto:matt@mreider.com)
+  (see [SECURITY.md](./SECURITY.md) for the disclosure policy).
 
 ## Contributing
 
