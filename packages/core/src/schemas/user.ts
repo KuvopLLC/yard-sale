@@ -8,6 +8,7 @@ export const UpdateMeBody = z.object({
   defaultRegion: z
     .object({
       country: z.string().length(2),
+      subdivision: z.string().optional(),
       city: z.string().optional(),
     })
     .optional(),
@@ -40,5 +41,5 @@ export interface UserPublic {
   createdAt: number;
   displayName?: string;
   profilePublic: boolean;
-  defaultRegion?: { country: string; city?: string };
+  defaultRegion?: { country: string; subdivision?: string; city?: string };
 }

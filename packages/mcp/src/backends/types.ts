@@ -69,7 +69,7 @@ export interface SaleSite {
   visibility?: 'public' | 'private';
   /** Host-only: secret token for private sales (/s/{token}). */
   privateToken?: string;
-  region?: { country: string; city?: string };
+  region?: { country: string; subdivision?: string; city?: string };
   // Allow arbitrary locale sibling keys.
   [k: string]: unknown;
 }
@@ -107,7 +107,7 @@ export interface UpdateSiteInput {
   language?: string;
   contact?: SaleContact;
   visibility?: 'public' | 'private';
-  region?: { country: string; city?: string };
+  region?: { country: string; subdivision?: string; city?: string };
 }
 
 export interface CreateSaleInput {
@@ -119,13 +119,13 @@ export interface CreateSaleInput {
   currency?: string;
   contact?: SaleContact;
   visibility?: 'public' | 'private';
-  region?: { country: string; city?: string };
+  region?: { country: string; subdivision?: string; city?: string };
 }
 
 export interface UpdateProfileInput {
   displayName?: string;
   profilePublic?: boolean;
-  defaultRegion?: { country: string; city?: string } | null;
+  defaultRegion?: { country: string; subdivision?: string; city?: string } | null;
 }
 
 export interface SaleSummary {

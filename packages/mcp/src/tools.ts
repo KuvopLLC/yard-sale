@@ -67,10 +67,16 @@ export const tools: Record<string, ToolDef> = {
       region: z
         .object({
           country: z.string().length(2).describe('ISO 3166-1 alpha-2 country code.'),
-          city: z.string().optional(),
+          subdivision: z
+            .string()
+            .optional()
+            .describe(
+              'ISO 3166-2 subdivision code (state, province, etc.) — optional for finer granularity.',
+            ),
+          city: z.string().optional().describe('City name.'),
         })
         .optional()
-        .describe('Optional region for discovery search.'),
+        .describe('Optional region for discovery search. Shown on public pages only.'),
     }),
     handler: async (backend, args) =>
       backend.createSale({
@@ -95,7 +101,8 @@ export const tools: Record<string, ToolDef> = {
   update_profile: {
     description:
       'Update user profile settings: display name, profile visibility, and default region for new sales. ' +
-      'Pass only the fields you want to change. Setting `profilePublic` to false hides your profile from discovery.',
+      'Region appears only on public sales pages. Pass only the fields you want to change. ' +
+      'Setting `profilePublic` to false hides your profile from discovery.',
     schema: z.object({
       displayName: z.string().optional().describe('Your display name (defaults to username).'),
       profilePublic: z
@@ -105,17 +112,24 @@ export const tools: Record<string, ToolDef> = {
       defaultRegion: z
         .object({
           country: z.string().length(2).describe('ISO 3166-1 alpha-2 country code.'),
-          city: z.string().optional(),
+          subdivision: z
+            .string()
+            .optional()
+            .describe('ISO 3166-2 subdivision code (state, province, etc.).'),
+          city: z.string().optional().describe('City name.'),
         })
         .nullable()
         .optional()
-        .describe('Default region for new sales. Pass null to clear.'),
+        .describe('Default region for new sales (shown on public pages only). Pass null to clear.'),
     }),
     handler: async (backend, args) => {
       await backend.updateProfile({
         displayName: args.displayName as string | undefined,
         profilePublic: args.profilePublic as boolean | undefined,
-        defaultRegion: args.defaultRegion as { country: string; city?: string } | null | undefined,
+        defaultRegion: args.defaultRegion as
+          | { country: string; subdivision?: string; city?: string }
+          | null
+          | undefined,
       });
       return { success: true };
     },
@@ -152,10 +166,16 @@ export const tools: Record<string, ToolDef> = {
       region: z
         .object({
           country: z.string().length(2).describe('ISO 3166-1 alpha-2 country code.'),
-          city: z.string().optional(),
+          subdivision: z
+            .string()
+            .optional()
+            .describe(
+              'ISO 3166-2 subdivision code (state, province, etc.) — optional for finer granularity.',
+            ),
+          city: z.string().optional().describe('City name.'),
         })
         .optional()
-        .describe('Optional region for discovery search.'),
+        .describe('Optional region for discovery search. Shown on public pages only.'),
     }),
     handler: async (backend, args) => {
       const { sale, ...patch } = args;
