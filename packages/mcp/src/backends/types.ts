@@ -122,6 +122,12 @@ export interface CreateSaleInput {
   region?: { country: string; city?: string };
 }
 
+export interface UpdateProfileInput {
+  displayName?: string;
+  profilePublic?: boolean;
+  defaultRegion?: { country: string; city?: string } | null;
+}
+
 export interface SaleSummary {
   id: string;
   slug: string;
@@ -147,6 +153,9 @@ export interface Backend {
   getSite(sale?: string): Promise<SaleSite>;
   listItems(sale?: string): Promise<SaleItem[]>;
   getItem(id: string, sale?: string): Promise<SaleItem>;
+
+  // User profile (always supported).
+  updateProfile(patch: UpdateProfileInput): Promise<void>;
 
   // Write (always supported)
   updateSite(patch: UpdateSiteInput, sale?: string): Promise<SaleSite>;

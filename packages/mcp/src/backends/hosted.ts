@@ -9,6 +9,7 @@ import type {
   SaleSite,
   SaleSummary,
   UpdateItemInput,
+  UpdateProfileInput,
   UpdateSiteInput,
 } from './types.js';
 
@@ -78,6 +79,15 @@ export class HostedApiBackend implements Backend {
       ...(sale.publicUrl ? { publicUrl: sale.publicUrl } : {}),
       ...(sale.editorUrl ? { editorUrl: sale.editorUrl } : {}),
     };
+  }
+
+  // ─── User profile ──────────────────────────────────────────────────────────
+  async updateProfile(patch: UpdateProfileInput): Promise<void> {
+    const body: Record<string, unknown> = {};
+    if (patch.displayName !== undefined) body.displayName = patch.displayName;
+    if (patch.profilePublic !== undefined) body.profilePublic = patch.profilePublic;
+    if (patch.defaultRegion !== undefined) body.defaultRegion = patch.defaultRegion;
+    await this.fetch(`/me`, { method: 'PATCH', body });
   }
 
   // ─── Read ──────────────────────────────────────────────────────────────

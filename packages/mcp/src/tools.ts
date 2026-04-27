@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import type { Backend, CreateSaleInput } from './backends/types.js';
+import type { Backend, CreateSaleInput, UpdateProfileInput } from './backends/types.js';
 import { draftItemFromUrl } from './draft.js';
 
 /**
@@ -90,6 +90,35 @@ export const tools: Record<string, ToolDef> = {
       'Read the sale metadata (name, subtitle, theme, contact, currency, publicUrl, editorUrl).',
     schema: z.object({ ...SaleRefField }),
     handler: async (backend, args) => backend.getSite(str(args.sale)),
+  },
+
+  update_profile: {
+    description:
+      'Update user profile settings: display name, profile visibility, and default region for new sales. ' +
+      'Pass only the fields you want to change. Setting `profilePublic` to false hides your profile from discovery.',
+    schema: z.object({
+      displayName: z.string().optional().describe('Your display name (defaults to username).'),
+      profilePublic: z
+        .boolean()
+        .optional()
+        .describe('Whether your profile is publicly discoverable. Defaults to true.'),
+      defaultRegion: z
+        .object({
+          country: z.string().length(2).describe('ISO 3166-1 alpha-2 country code.'),
+          city: z.string().optional(),
+        })
+        .nullable()
+        .optional()
+        .describe('Default region for new sales. Pass null to clear.'),
+    }),
+    handler: async (backend, args) => {
+      await backend.updateProfile({
+        displayName: args.displayName as string | undefined,
+        profilePublic: args.profilePublic as boolean | undefined,
+        defaultRegion: args.defaultRegion as { country: string; city?: string } | null | undefined,
+      });
+      return { success: true };
+    },
   },
 
   update_site: {

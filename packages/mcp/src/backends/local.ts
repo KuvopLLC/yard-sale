@@ -12,6 +12,7 @@ import type {
   SaleSite,
   SaleSummary,
   UpdateItemInput,
+  UpdateProfileInput,
   UpdateSiteInput,
 } from './types.js';
 
@@ -35,6 +36,12 @@ export class LocalFileBackend implements Backend {
     throw new Error(
       'Self-hosted mode: the repo IS the sale — create a new repo from the template ' +
         'at https://github.com/KuvopLLC/yrdsl-self-hosted instead of calling create_sale.',
+    );
+  }
+
+  async updateProfile(_patch: UpdateProfileInput): Promise<void> {
+    throw new Error(
+      'Self-hosted mode does not support user profiles. Profiles are a hosted-only feature.',
     );
   }
 
